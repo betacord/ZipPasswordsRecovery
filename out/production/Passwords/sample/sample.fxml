@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="tfFilePath" editable="false" prefHeight="25.0" prefWidth="398.0" />
+            <TitledPane animated="false" collapsible="false" prefHeight="116.0" prefWidth="456.0" text="Zakres znaków">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="114.0" prefWidth="454.0">
+                     <children>
+                        <CheckBox fx:id="checkAZ" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="A-Z" />
+                        <CheckBox fx:id="chechaz" layoutX="8.0" layoutY="31.0" mnemonicParsing="false" selected="true" text="a-z" />
+                        <CheckBox fx:id="check09" layoutX="8.0" layoutY="48.0" mnemonicParsing="false" selected="true" text="0-9" />
+                        <CheckBox fx:id="checkSpecialChars" layoutX="8.0" layoutY="65.0" mnemonicParsing="false" text="Znaki specjalne" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" prefHeight="97.0" prefWidth="446.0" text="Pozostałe opcje">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="137.0" prefWidth="444.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Maksymalna długość hasła:" />
+                        <TextField fx:id="tfMaxLength" layoutX="12.0" layoutY="36.0" text="15" />
+                        <CheckBox fx:id="checkShowActualPass" layoutX="202.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Pokaż aktualny stan operacji" />
+                        <CheckBox fx:id="savePassToFile" layoutX="202.0" layoutY="40.0" mnemonicParsing="false" selected="true" text="Skopiuj hasło do schowka" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <BorderPane prefHeight="40.0" prefWidth="446.0">
+               <left>
+                  <Button fx:id="btnStart" mnemonicParsing="false" onAction="#startForceButton" prefHeight="25.0" prefWidth="214.0" text="Rozpocznij" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <Button fx:id="btnStop" mnemonicParsing="false" onAction="#stopForceButton" prefHeight="25.0" prefWidth="214.0" text="Zatrzymaj" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+            <TitledPane animated="false" collapsible="false" prefHeight="86.0" prefWidth="446.0" text="Postęp operacji">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="actualPassLabel" layoutX="14.0" layoutY="21.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfActualPass" editable="false" layoutX="150.0" layoutY="19.0" prefHeight="23.0" prefWidth="278.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnOpenFile" mnemonicParsing="false" onAction="#openFile" text="Otwórz plik" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <top>
+      <VBox prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Plik">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openFile" text="Otwórz plik" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="Zamknij" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Pomoc">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#showAboutInfo" text="O programie" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children></VBox>
+   </top>
+   <left>
+      <VBox prefHeight="341.0" prefWidth="44.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <VBox alignment="BOTTOM_LEFT" prefHeight="41.0" prefWidth="590.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="© 2017 Tomasz Krzywicki | www.krzywicki.pro" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin></VBox>
+   </bottom>
+</BorderPane>
